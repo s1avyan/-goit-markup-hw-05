@@ -175,7 +175,7 @@ header .icon:focus {
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: 1px;
+  bottom: 0px;
   height: 4px;
   border-radius: 1px;
   width: 100%;
@@ -197,12 +197,18 @@ header .icon:focus {
 header .contact {
   padding-left: 50px;
   color: var(--primary-text-color);
+  -webkit-transition: color var(--timing-animation);
+  transition: color var(--timing-animation);
 }
 
 .contact:hover,
 .contact:active,
-.contact:focus {
+.contact:focus,
+.contact:hover .icon,
+.contact:active .icon,
+.contact:focus .icon {
   color: var(--active-text-color);
+  --color4: var(--active-text-color);
 }
 
 .nav-link:hover,
@@ -396,12 +402,18 @@ main .container {
   height: 44px;
   width: 44px;
   border-radius: 50%;
+  -webkit-transition: background-color var(--timing-animation);
+  transition: background-color var(--timing-animation);
 }
 
 .team .row a:hover,
 .team .row a:active,
-.team .row a:focus {
+.team .row a:focus,
+.team .row a:hover .icon,
+.team .row a:active .icon,
+.team .row a:focus .icon {
   background-color: var(--active-text-color);
+  --color2: #ffffff;
 }
 
 .icon {
@@ -409,13 +421,7 @@ main .container {
       -ms-grid-row-align: center;
       align-self: center;
   --color2: #afb1b8;
-}
-
-.team .icon:hover,
-.team .icon:active,
-.team .icon:focus {
-  --color2: #ffffff;
-  outline: none;
+  transition: --color2 var(--timing-animation);
 }
 
 .partners a {
@@ -429,6 +435,8 @@ main .container {
           justify-content: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  -webkit-transition: border var(--timing-animation), path var(--timing-animation);
+  transition: border var(--timing-animation), path var(--timing-animation);
 }
 
 .partners a:hover,
@@ -437,9 +445,9 @@ main .container {
   border: 1px solid var(--active-text-color);
 }
 
-.partners .icon:hover,
-.partners .icon:active,
-.partners .icon:focus {
+.partners a:hover .icon,
+.partners a:active .icon,
+.partners a:focus .icon {
   --color2: var(--active-text-color);
 }
 
@@ -524,19 +532,12 @@ footer .row > * {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   margin-right: 10px;
+  -webkit-transition: background-color var(--timing-animation);
+  transition: background-color var(--timing-animation);
 }
 
-.subscribe-social img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  fill: #ffffff;
+.subscribe-social .icon {
+  --color2: #ffffff;
 }
 
 .subscribe-social a:hover,
@@ -736,12 +737,8 @@ section li {
   padding: 6px 22px;
   margin: 0 8px;
   background-color: var(--button-bgc);
-  -webkit-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: background-color var(--timing-animation), color var(--timing-animation);
+  transition: background-color var(--timing-animation), color var(--timing-animation);
 }
 
 .portfolio .button:hover,
