@@ -415,10 +415,15 @@ footer .row > * {
 }
 .subscribe-social .icon {
   --color2: #ffffff;
+  transition: --color2 var(--timing-animation);
 }
+
 .subscribe-social a:hover,
 .subscribe-social a:active,
-.subscribe-social a:focus {
+.subscribe-social a:focus,
+.subscribe-social a:hover .icon,
+.subscribe-social a:active .icon,
+.subscribe-social a:focus .icon {
   background-color: var(--button-hover-bgc);
 }
 .subscribe-input {
